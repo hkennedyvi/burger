@@ -5,11 +5,10 @@ const router = express.Router();
 router.get("/", (req, res) => {
     res.render("index");
     // burger.selectAll((data) => {
-    //   const hbsObject = {
-    //       burgers: data
-    //   };
-    //   console.log(hbsObject);
-    //   res.render("index");  
+    //   // const hbsObject = {
+    //   //     burgers: data
+    //   // };
+    //   // console.log(hbsObject)
     // });
 });
 
