@@ -11,27 +11,27 @@ const connection = require("../config/connection.js");
 // These help avoid SQL injection
 // https://en.wikipedia.org/wiki/SQL_injection
 const orm = {
-    selectAll: (table) => {
+    selectAll: (table, cb) => {
         const queryString = "SELECT * FROM ??";
         connection.query(queryString, [table], (err, result) => {
             if (err) throw err;
-            console.log(result);
+            cb(result);
         });
     },
 
-    insertOne: (table, name, eaten) => {
+    insertOne: (table, name, eaten, cb) => {
         const queryString = "INSERT INTO ?? (burger_name, devoured) VALUES (?, ?)";
         connection.query(queryString, [table, name, eaten], (err, result) => {
             if (err) throw err;
-            console.log(result);
+            cb(result);
         });
     },
 
-    updateOne: (table, eaten, name) => {
+    updateOne: (table, eaten, name, cb) => {
         const queryString = "UPDATE ?? SET devoured = ? WHERE burger_name = ?";
         connection.query(queryString, [table, eaten, name], (err, result) => {
             if (err) throw err;
-            console.log(result);
+            cb(result);
         });
     }
 };
