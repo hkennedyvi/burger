@@ -1,5 +1,10 @@
 body {
     background-color: cornflowerblue;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
 }
 
 h1, h2 {
